@@ -57,9 +57,12 @@ What the hell did you guys do?""")
     @commands.Cog.listener()
     async def on_message(self, ctx):
         if ctx.guild.id == 518193641186131988:
-            if str(ctx.channel) == "suggestions-and-voting":
+            if ctx.channel.id == 518196017879842854:
                 await ctx.add_reaction('✅')
                 await ctx.add_reaction('❌')
+            elif ctx.channel.id == 706603308839600178:
+                emoji = discord.utils.get(bot.emojis, id=734567355082080278)
+                await ctx.add_reaction(emoji)
         if ctx.guild.name == "The Festive Crew":
             if "chiaki" in ctx.content:
                 await ctx.add_reaction('<a:ChiakiHug:645236109307019264>')
